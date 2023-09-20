@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="WpfBoxFactory.Views.ExpiredBoxList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfBoxFactory.Views"
+             mc:Ignorable="d" 
+             Background="LightBlue">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Expired Boxes:" Grid.Row="0"/>
+        <StackPanel x:Name="spButtonsExpired" Orientation="Horizontal" Grid.Row="1"/>
+        <ListView x:Name="lvExpired" Grid.Row="2" ItemsSource="{Binding BoxService}">
+            <ListView.View>
+                <GridView x:Name="grdExpired">
+                    <GridViewColumn x:Name="exBoxBase" Header=" Box Base" DisplayMemberBinding= "{Binding Path=Base}" />
+                    <GridViewColumn x:Name="exBoxHight" Header=" Box Hight " DisplayMemberBinding= "{Binding Path=Y}"/>
+                    <GridViewColumn x:Name="exAmount" Header=" Amount " DisplayMemberBinding= "{Binding Path=Amount}"/>
+                    <GridViewColumn x:Name="exTimeLeft" Header=" Expire Date: " DisplayMemberBinding="{Binding Path=ExpDate}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

@@ -1,0 +1,22 @@
+﻿<Application x:Class="WpfBoxFactory.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfBoxFactory"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="def" TargetType="FrameworkElement">
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="TextBlock.FontSize" Value="15"/>
+            </Style>
+
+            <Style TargetType="TextBlock" BasedOn="{StaticResource def}"/>
+            <Style TargetType="Label" BasedOn="{StaticResource def}"/>
+
+            <Style TargetType="TextBox" BasedOn="{StaticResource def}">
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
